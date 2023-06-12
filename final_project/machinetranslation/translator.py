@@ -1,19 +1,24 @@
+"""
+translator from eng to french
+"""
+
 from deep_translator import MyMemoryTranslator
 
-translator = MyMemoryTranslator()
+# english to french
+def english_to_french(english_text):
+    """
+    function to translate Englist to French
+    """
+    french_text = MyMemoryTranslator(source="en", target="fr").translate(english_text)
+    print(french_text)
 
-def englishToFrench(englishText):
-    try:
-        frenchText = translator.translate(englishText, "en", "fr")
-        return frenchText
-    except Exception as e:
-        print(f"Translation error: {e}")
-        return None
+    return french_text
 
-def frenchToEnglish(frenchText):
-    try:
-        englishText = translator.translate(frenchText, "fr", "en")
-        return englishText
-    except Exception as e:
-        print(f"Translation error: {e}")
-        return None
+# french to english
+def french_to_english(french_text):
+    """
+    function to translate French to English
+    """
+    english_text = MyMemoryTranslator(source="fr", target="en").translate(french_text)
+    print(english_text)
+    return english_text
